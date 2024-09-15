@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard | Cyber Saviours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            list-style-type: none;
+        }
+        
+        .nav-menu li {
+            display: inline;
+            margin-left: 20px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+        
+        .dashboard {
+            padding: 2rem 0;
+        }
+        
+        .welcome-section, .user-details {
+            background-color: white;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        h2, h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .user-details p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+            }
+        }
+    </style>
+    <script type="module">
+        // Import and configure Firebase
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
+        import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
+        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBky1m8XmelB3hFAy7MZ6aIe7BMn4AuGJE",
+            authDomain: "ztna-238e7.firebaseapp.com",
+            databaseURL: "https://ztna-238e7-default-rtdb.firebaseio.com",
+            projectId: "ztna-238e7",
+            storageBucket: "ztna-238e7.appspot.com",
+            messagingSenderId: "89728704566",
+            appId: "1:89728704566:web:03d989166154a0817db897"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Function to display user details
+        const displayUserDetails = async (userId) => {
+            try {
+                const userDocRef = doc(db, 'users', userId);
+                const userDoc = await getDoc(userDocRef);
+
+                if (userDoc.exists()) {
+                    const data = userDoc.data();
+                    document.getElementById('user-name').textContent = data.name || 'N/A';
+                    document.getElementById('user-email').textContent = data.email || 'N/A';
+                    document.getElementById('user-empID').textContent = data.empID || 'N/A';
+                    document.getElementById('welcome-message').style.display = 'none';
+                } else {
+                    document.getElementById('welcome-message').textContent = 'User data not found';
+                }
+            } catch (error) {
+                console.error('Error fetching user details:', error);
+                document.getElementById('welcome-message').textContent = 'Error loading user details';
+            }
+        };
+
+        // Check if a user is authenticated
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, retrieve and display user data
+                displayUserDetails(user.uid);
+            } else {
+                // No user is signed in
+                document.getElementById('welcome-message').textContent = 'No user is signed in';
+            }
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Cyber Saviours Employee Dashboard</h1>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="home.html">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+            <section class="welcome-section">
+                <h2>Welcome, <span id="user-name">Employee</span></h2>
+                <p id="welcome-message">Loading user details...</p>
+            </section>
+            <section class="user-details">
+                <h3>Your Details</h3>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+                <p><strong>Employee ID:</strong> <span id="user-empID"></span></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cyber Saviours. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

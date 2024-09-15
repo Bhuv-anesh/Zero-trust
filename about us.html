@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Company Intranet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+            border-radius: 5px;
+        }
+
+        nav .logout {
+            margin-left: 30px;
+            padding: 5px 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        nav .logout:hover {
+            background-color: #c0392b;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 80px 20px 20px 20px; /* Adjusted margin to accommodate the fixed header */
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            flex: 1;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .work-item {
+            background-color: #f8f9fa;
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .work-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .work-item img {
+            width: 40%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 15px;
+            margin-right: 40px;
+        }
+
+        .work-item:nth-child(even) img {
+            margin-right: 0;
+            margin-left: 40px;
+        }
+
+        .work-item .content {
+            width: 60%;
+        }
+
+        .work-item h3 {
+            margin: 0 0 20px 0;
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+
+        .work-item p {
+            font-size: 1.1em;
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                width: 100%; /* Ensure full width on small screens */
+                padding: 10px;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .work-item, .work-item:nth-child(even) {
+                flex-direction: column;
+            }
+            
+            .work-item img, .work-item:nth-child(even) img {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 0 20px 0;
+            }
+            
+            .work-item .content {
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Company Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="department.html">Departments</a></li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="logout" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <main>
+            <section class="section">
+                <h2>Our Mission</h2>
+                <p>To empower businesses with cutting-edge cybersecurity solutions and unparalleled support, ensuring their operations remain secure, efficient, and resilient against emerging threats.</p>
+            </section>
+            
+            <section class="section">
+                <h2>Our Vision</h2>
+                <p>To be the leading provider of innovative cybersecurity solutions globally, fostering a safe digital environment for organizations of all sizes.</p>
+            </section>
+            
+            <section class="section">
+                <h2>Our Values</h2>
+                <p>Integrity, Innovation, Excellence, Customer Focus, and Teamwork.</p>
+            </section>
+            
+            <section class="section work-item">
+                <img src="security.png" alt="Comprehensive Security Solutions">
+                <div class="content">
+                    <h2>Our Works</h2>
+                    <h3>Comprehensive Security Solutions</h3>
+                    <p>Providing end-to-end cybersecurity solutions tailored to meet the unique needs of our clients, ensuring robust protection against evolving threats.</p>
+                </div>
+            </section>
+
+            <section class="section work-item">
+                <img src="security2.webp" alt="Proactive Threat Management">
+                <div class="content">
+                    <h3>Proactive Threat Management</h3>
+                    <p>Implementing advanced threat detection and response mechanisms to identify and mitigate potential security breaches before they impact our clients' operations.</p>
+                </div>
+            </section>
+
+            <section class="section work-item">
+                <img src="security3.jpg" alt="Compliance and Risk Management">
+                <div class="content">
+                    <h3>Compliance and Risk Management</h3>
+                    <p>Helping organizations navigate complex regulatory landscapes and manage risks effectively through comprehensive compliance and risk management services.</p>
+                </div>
+            </section>
+
+            <section class="section work-item">
+                <img src="security4.jpg" alt="Security Awareness Training">
+                <div class="content">
+                    <h3>Security Awareness Training</h3>
+                    <p>Empowering employees with the knowledge and skills needed to recognize and respond to security threats, fostering a culture of security awareness within organizations.</p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Our History</h2>
+                <p>Founded in 2010, Cyber Saviours has been at the forefront of cybersecurity innovation. With over a decade of experience, we have consistently delivered cutting-edge solutions and exceptional support to our clients worldwide. Our team of experts is dedicated to staying ahead of the curve, ensuring that we provide the most effective and up-to-date cybersecurity measures available.</p>
+            </section>
+        </main>
+        
+        <footer>
+            &copy; 2024 Cyber Saviours. All Rights Reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Session timeout script
+        const sessionTimeoutMinutes = 1; // 30 minutes timeout
+        let timeout;
+
+        function startTimeout() {
+            timeout = setTimeout(() => {
+                alert("Session expired. Please log in again.");
+                window.location.href = "login.html";
+            }, sessionTimeoutMinutes * 60 * 1000);
+        }
+
+        window.onload = startTimeout;
+
+        function logout() {
+            clearTimeout(timeout);
+            localStorage.removeItem('userCredentials');
+            alert("Logging out...");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

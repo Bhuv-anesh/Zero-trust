@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Saviours - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .img {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .img img {
+            width: 50%;
+        }
+
+        #login {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        #login h2 {
+            color: #00796b;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin: 15px 0 5px 0;
+            width: 100%;
+            text-align: left;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        select,
+        input[type="email"],
+        input[type="password"] {
+            padding: 15px;
+            width: calc(100% - 30px);
+            margin-bottom: 20px;
+            border: 1px solid #bdbdbd;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        button {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+        #loginMessage {
+            color: red;
+            margin-top: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        footer {
+            background-color: #00796b;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+
+            .img {
+                display: block;
+            }
+
+            .img img {
+                width: 70%;
+            }
+        }
+    </style>
+
+    <!-- Hotjar Tracking Code for Site 5093361 -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:5093361,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
+<body>
+    <header>
+        Cyber Saviours
+    </header>
+    <main>
+        <div class="container">
+            <div class="img">
+                <img src="bg.svg" alt="Background Image">
+            </div>
+            <section id="login">
+                <h2>Employee Login</h2>
+                <form id="loginForm">
+                    <div>
+                        <img src="avatar.svg" alt="Avatar" style="width: 80px; margin-bottom: 20px;">
+                    </div>
+                    <label for="userType">User Type:</label>
+                    <select id="userType" name="userType" required>
+                        <option value="">Select Role</option>
+                        <option value="employee">Employee</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <div id="message"></div>
+                <a href="#">Forgot Password?</a>
+            </section>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 Cyber Saviours. All rights reserved.
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

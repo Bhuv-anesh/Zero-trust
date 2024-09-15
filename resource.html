@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Intranet Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: #2c3e50;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: background-color 0.3s, border-radius 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #2c3e50;
+            border-radius: 5px;
+        }
+
+        .logout {
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout:hover {
+            background-color: #c0392b;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 120px;
+        }
+
+        .section img.heading-image {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        h2 {
+            color: #35424a;
+            border-bottom: 2px solid #e8491d;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            color: #e8491d;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #e8491d;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .department {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .department img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Company Logo">
+        </div>
+        <h1>Company Intranet Resources</h1>
+        <nav>
+            <ul><li><a href="home.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="department.html">Departments</a></li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="logout" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <img src="documents.jpg" alt="Documents Icon" class="heading-image">
+            <h2><i class="fas fa-file-alt"></i> Documents</h2>
+            <ul>
+                <li><a href="#">Employee Handbook</a> - Comprehensive guide to company policies and procedures</li>
+                <li><a href="#">Forms and Templates</a> - Standardized documents for various business processes, including:
+                    <ul>
+                        <li>Expense reports</li>
+                        <li>Time-off requests</li>
+                        <li>Project proposal templates</li>
+                    </ul>
+                </li>
+                <li><a href="#">Procedures and Guidelines</a> - Step-by-step instructions for common tasks, such as:
+                    <ul>
+                        <li>IT security protocols</li>
+                        <li>Emergency evacuation procedures</li>
+                        <li>Client onboarding process</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <img src="tools.webp" alt="Tools Icon" class="heading-image">
+            <h2><i class="fas fa-tools"></i> Tools and Applications</h2>
+            <ul>
+                <li><a href="#">Software Downloads</a> - Access to company-approved software and applications, including:
+                    <ul>
+                        <li>Productivity suite (e.g., Microsoft Office)</li>
+                        <li>Communication tools (e.g., Slack, Zoom)</li>
+                        <li>Project management software (e.g., Jira, Trello)</li>
+                    </ul>
+                </li>
+                <li><a href="#">System Access Links</a> - Quick links to internal systems and platforms, such as:
+                    <ul>
+                        <li>Employee portal</li>
+                        <li>Customer Relationship Management (CRM) system)</li>
+                        <li>Learning Management System (LMS)</li>
+                    </ul>
+                </li>
+                <li><a href="#">Training Materials</a> - Resources for self-paced learning and skill development, including:
+                    <ul>
+                        <li>Product knowledge courses</li>
+                        <li>Compliance training modules</li>
+                        <li>Leadership development programs</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <img src="employee resource.webp" alt="Employee Resources Icon" class="heading-image">
+            <h2><i class="fas fa-user-tie"></i> Employee Resources</h2>
+            <ul>
+                <li><a href="#">Benefits Information</a> - Detailed explanation of:
+                    <ul>
+                        <li>Health insurance plans and coverage</li>
+                        <li>Retirement savings options (e.g., 401(k))</li>
+                        <li>Paid time off policies</li>
+                        <li>Employee assistance programs</li>
+                    </ul>
+                </li>
+                <li><a href="">Professional Development</a> - Opportunities for career growth, including:
+                    <ul>
+                        <li>Internal job postings</li>
+                        <li>Mentorship programs</li>
+                        <li>Conference and seminar attendance policies</li>
+                        <li>Tuition reimbursement information</li>
+                    </ul>
+                </li>
+                <li><a href="#">Employee Directory</a> - Searchable database of all staff members, including:
+                    <ul>
+                        <li>Contact information</li>
+                        <li>Department affiliations</li>
+                        <li>Reporting structures</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <img src="company info.png" alt="Company Info Icon" class="heading-image">
+            <h2><i class="fas fa-building"></i> Company Information</h2>
+            <ul>
+                <li><a href="#">Organizational Chart</a> - Interactive visual representation of company structure</li>
+                <li><a href="#">Company News and Updates</a> - Latest announcements, including:
+                    <ul>
+                        <li>Quarterly financial results</li>
+                        <li>New product launches</li>
+                        <li>Employee recognition awards</li>
+                        <li>Company event calendar</li>
+                    </ul>
+                </li>
+                <li><a href="#">Mission and Values</a> - Overview of:
+                    <ul>
+                        <li>Mission statement</li>
+                        <li>Core values and their explanations</li>
+                        <li>Corporate social responsibility initiatives</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <img src="help support.avif" alt="Help and Support Icon" class="heading-image">
+            <h2><i class="fas fa-question-circle"></i> Help and Support</h2>
+            <ul>
+                <li><a href="#">FAQ</a> - Comprehensive list of frequently asked questions, categorized by department and topic</li>
+                <li><a href="#">IT Helpdesk</a> - 24/7 support for technical issues, including:
+                    <ul>
+                        <li>Remote assistance</li>
+                        <li>Equipment requests</li>
+                        <li>Software troubleshooting</li>
+                    </ul>
+                </li>
+                <li><a href="#">Feedback Form</a> - Anonymous suggestion box for company improvements and concerns</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cyber Saviours. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Session timeout script
+        const sessionTimeoutMinutes = 1; // 30 minutes timeout
+        let timeout;
+
+        function startTimeout() {
+            timeout = setTimeout(() => {
+                alert("Session expired. Please log in again.");
+                window.location.href = "login.html";
+            }, sessionTimeoutMinutes * 60 * 1000);
+        }
+
+        window.onload = startTimeout;
+
+        function logout() {
+            clearTimeout(timeout);
+            localStorage.removeItem('userCredentials');
+            alert("Logging out...");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

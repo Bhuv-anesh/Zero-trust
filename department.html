@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Departments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: background-color 0.3s, border-radius 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #2c3e50;
+            border-radius: 5px;
+        }
+
+        .logout {
+            margin-left: 20px;
+            padding: 8px 15px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout:hover {
+            background-color: #c0392b;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1; /* Allows main content to grow and push footer to the bottom */
+        }
+
+        .department {
+            background-color: #fff;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .department img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .department h2 {
+            margin-top: 0;
+            color: #34495e;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .department p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                margin-top: 15px;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .logout {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .department {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .department img {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Company Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="department.html">Departments</a></li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="logout" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="department">
+            <img src="humanresource.jpg" alt="Human Resources">
+            <div>
+                <h2>Human Resources</h2>
+                <p>Responsible for recruiting, screening, interviewing, and placing workers. They also handle employee relations, payroll, benefits, and training.</p>
+            </div>
+        </section>
+        <section class="department">
+            <img src="finance.jpg" alt="Finance">
+            <div>
+                <h2>Finance</h2>
+                <p>Manages the company's financial planning, analysis, and reporting. They are also responsible for budgeting, forecasting, and managing financial risks.</p>
+            </div>
+        </section>
+        <section class="department">
+            <img src="infotech.jpg" alt="Information Technology">
+            <div>
+                <h2>Information Technology</h2>
+                <p>Oversees the installation and maintenance of computer network systems within the company. They ensure that the systems are functioning properly and securely.</p>
+            </div>
+        </section>
+        <section class="department">
+            <img src="marketing.webp" alt="Marketing">
+            <div>
+                <h2>Marketing</h2>
+                <p>Focuses on promoting and selling products or services, including market research and advertising.</p>
+            </div>
+        </section>
+        <section class="department">
+            <img src="sales.webp" alt="Sales">
+            <div>
+                <h2>Sales</h2>
+                <p>Responsible for selling products or services and ensuring customer satisfaction.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cyber Saviours. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Session timeout script
+        const sessionTimeoutMinutes = 1; // 30 minutes timeout
+        let timeout;
+
+        function startTimeout() {
+            timeout = setTimeout(() => {
+                alert("Session expired. Please log in again.");
+                window.location.href = "login.html";
+            }, sessionTimeoutMinutes * 60 * 1000);
+        }
+
+        window.onload = startTimeout;
+
+        function logout() {
+            clearTimeout(timeout);
+            localStorage.removeItem('userCredentials');
+            alert("Logging out...");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
+

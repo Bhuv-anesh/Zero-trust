@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cyber Saviours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: #2c3e50;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            margin-bottom: 20px;
+            border-bottom: 3px solid #e8491d;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: background-color 0.3s, border-radius 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #2c3e50;
+            border-radius: 5px;
+        }
+
+        .logout {
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout:hover {
+            background-color: #c0392b;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 0 1.5em;
+        }
+
+        .contact-info, .contact-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            padding: 2em;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            margin-top: 0;
+            color: #3e3779;
+        }
+
+        .contact-info p {
+            margin-bottom: 1em;
+        }
+
+        .contact-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 0.75em;
+            font-size: 1.1em;
+        }
+
+        .contact-info a {
+            color: #050e85;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 0.5em;
+            font-weight: bold;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.75em;
+            margin-top: 0.25em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: #5e6df3;
+            color: white;
+            border: none;
+            padding: 0.75em 1.5em;
+            cursor: pointer;
+            margin-top: 1em;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .contact-form button:hover {
+            background-color: #181414;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            font-size: 14px;
+        }
+
+        .message-success {
+            display: none;
+            margin-top: 1em;
+            padding: 1em;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Company Logo">
+        </div>
+        <h1>Contact Us</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="department.html">Departments</a></li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="logout" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-info">
+            <h2>Our Contact Information</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us through the following methods:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:support@cybersaviours.com">support@cybersaviours.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+1234567890">+1 234 567 890</a></li>
+                <li><strong>Address:</strong> 123 Cyber Street, Suite 456, Tech City, TC 78901</li>
+            </ul>
+        </section>
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="successMessage" class="message-success">
+                Your message has been sent successfully!
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cyber Saviours. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+            
+            // Display the success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Optionally, you can clear the form fields
+            this.reset();
+        });
+
+        // Session timeout script
+        const sessionTimeoutMinutes = 2; // 30 minutes timeout
+        let timeout;
+
+        function startTimeout() {
+            timeout = setTimeout(() => {
+                alert("Session expired. Please log in again.");
+                window.location.href = "login.html";
+            }, sessionTimeoutMinutes * 60 * 1000);
+        }
+
+        window.onload = startTimeout;
+
+        function logout() {
+            clearTimeout(timeout);
+            localStorage.removeItem('userCredentials');
+            alert("Logging out...");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

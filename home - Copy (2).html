@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER SAVIOURS - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+            border-radius: 5px;
+        }
+
+        nav .logout {
+            margin-left: 30px;
+            padding: 5px 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        nav .logout:hover {
+            background-color: #c0392b;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('herobc.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            border-radius: 15px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .news, .events, .announcements, .quick-links {
+            background-color: #fff;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .news h2, .events h2, .announcements h2, .quick-links h2 {
+            margin-top: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .news article, .events article, .announcements article {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .news article img, .events article img, .announcements article img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .content h3 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #34495e;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #fff;
+            background-color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #2980b9;
+        }
+
+        .quick-links ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .quick-links ul li a {
+            display: block;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .quick-links ul li a:hover {
+            background-color: #3498db;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero p {
+                font-size: 1.2em;
+            }
+            
+            .news, .events, .announcements, .quick-links {
+                padding: 30px 20px;
+            }
+            
+            .news article, .events article, .announcements article {
+                flex-direction: column;
+            }
+            
+            .news article img, .events article img, .announcements article img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Company Logo">
+        </div>
+        <nav>
+            <ul>
+                
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="department.html">Departments</a></li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="logout" id="signOutButton">Logout</button>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to the CYBER SAVIOURS</h1>
+                <p>Your gateway to all company resources, news, and updates.</p>
+            </div>
+        </section>
+        <section class="news">
+            <h2>Latest News</h2>
+            <article>
+                <img src="policy.jpg" alt="Policy Update">
+                <div class="content">
+                    <h3>New Policy Updates</h3>
+                    <p>We have updated our company policies. Please read through the latest changes to ensure compliance and understanding of our updated guidelines.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </article>
+        </section>
+        
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <article>
+                <img src="events.jpg" alt="Upcoming Events">
+                <div class="content">
+                    <h3>Annual Company Retreat</h3>
+                    <p>Don't miss our annual company retreat! This year, we're heading to the mountains for team-building activities and strategic planning sessions. Check out the schedule and RSVP now.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </article>
+        </section>
+        
+        <section class="announcements">
+            <h2>Announcements</h2>
+            <article>
+                <img src="annoucement1.webp" alt="Announcement">
+                <div class="content">
+                    <h3>Office Renovation Project</h3>
+                    <p>Our office will be undergoing renovations starting next month to create a more collaborative and modern workspace. Please check the schedule for temporary office locations and any disruptions to normal operations.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </article>
+        </section>
+        
+        <section class="quick-links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#">HR Portal</a></li>
+                <li><a href="#">IT Support</a></li>
+                <li><a href="#">Project Management</a></li>
+                <li><a href="#">Training Materials</a></li>
+                <li><a href="#">Company Policies</a></li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 CYBER SAVIOURS. All Rights Reserved.</p>
+    </footer>
+    
+    <div id="message"></div> <!-- Message container for status updates -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>
